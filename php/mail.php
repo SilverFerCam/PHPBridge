@@ -27,9 +27,7 @@
         $mail->setFrom('silverfercam.info@gmail.com', 'David Fernandez');
         $mail->addAddress('davidfercam69@gmail.com');               //Add a recipient        
     
-        //Attachments
-        /*$mail->addAttachment('/var/tmp/file.tar.gz');             //Add attachments
-        $mail->addAttachment('/tmp/image.jpg', 'new.jpg'); */
+        //Attachments        
         $mail->addAttachment($pdf);         //Optional name
     
         //Content
