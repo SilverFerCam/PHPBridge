@@ -344,7 +344,7 @@
                     <input type="radio" id="p20-3" name="p20" value="5">
                     <label for="p20-3">My team actively applies improvement methodologies on a regular basis (e.g. weekly basis). We strive to develop a culture of continuous improvement.</label>
                 </div>
-            </div>            
+            </div>
         </form>
         <div class="botones">
             <input type="button" class="boton" id="back" value="Back">
