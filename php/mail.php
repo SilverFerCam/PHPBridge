@@ -30,8 +30,8 @@
     
         //Content
         $mail->isHTML(true);                                        //Set email format to HTML
-        $mail->Subject = 'Here is the subject';
-        $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+        $mail->Subject = 'SilverStorm Bridge Quick Scan';
+        $mail->Body    = 'Here you have the quiz data:';
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
     
         $mail->send();
