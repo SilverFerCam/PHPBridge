@@ -7,11 +7,7 @@
     require '../PHPMailer/src/Exception.php';
     require '../PHPMailer/src/SMTP.php';
 
-    $mail = new PHPMailer(true);
-
-    $pdf = getenv('HOMEDRIVE').getenv('HOMEPATH').'\Downloads\DatosCuestionario.pdf';
-
-    echo($pdf);
+    $mail = new PHPMailer(true);    
 
     try {
         //Server settings        
@@ -25,10 +21,12 @@
     
         //Recipients
         $mail->setFrom('silverfercam.info@gmail.com', 'David Fernandez');
-        $mail->addAddress('davidfercam69@gmail.com');               //Add a recipient        
-    
+        $mail->addAddress('davidfercam69@gmail.com');               //Add a recipient                
+
+        $pdf = "../uploads/test.pdf";
+
         //Attachments        
-        $mail->addAttachment($pdf);         //Optional name
+        $mail->addAttachment($pdf);        //Optional name
     
         //Content
         $mail->isHTML(true);                                        //Set email format to HTML
@@ -38,6 +36,8 @@
     
         $mail->send();
         echo 'Message has been sent';
+        header("../index.php");
+        exit();
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }

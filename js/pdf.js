@@ -227,17 +227,35 @@ document.getElementById("pdf").addEventListener("click",function(){
          doc.text(20,30,'Continual Improvement: ');
          setDato();
          doc.text(20,35,resultados[11]);
+
+         var blob = doc.output('blob');
+
+            var formData = new FormData();
+            formData.append('pdf', blob);
+
+            $.ajax('php/upload.php',
+            {
+                method: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(data){console.log(data)},
+                error: function(data){console.log(data)}
+            });
+         
+         /*
+         var pdf = btoa(doc.output()); 
+         $.ajax({
+            method: "POST",
+            url: "php/upload.php",
+            data: {data: pdf},
+         }).done(function(data){
+            console.log(data);
+         }); */
+
          doc.save('DatosCuestionario.pdf');
 
-         /*var pdfBase64 = doc.output('datauristring');
-
-         window.plugin.email.open({
-            to: ['davidfercam69@gmail.com'],
-            subject: 'Bridge Quick Scan PDF',
-            body: 'Aqui adjunto viene el PDF generado en el cuestionario',
-            isHTML: false,
-            attachments: [pdfBase64]
-         });*/
+         /*var pdfBase64 = doc.output('datauristring');      */  
 
          window.location = "php/mail.php";
 
