@@ -18,7 +18,7 @@
 <body>
     <div class="barra">
         <a href="https://silver-storm.com/"><img src="img/SilverLogo5.png" class="logo"></a>
-        <a class="derecha">Bridge Quick Scan</a>
+        <a class="derecha">Digital Tranformation Roadmap Quick Scan</a>
     </div>
     <div id="graph" class="grafico">
         <canvas id="myChart" width="400" height="400" position="relative"></canvas>
