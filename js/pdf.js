@@ -233,18 +233,18 @@ document.getElementById("pdf").addEventListener("click",function(){
             var formData = new FormData();
             formData.append('pdf', blob);
 
-            $.ajax({
+            /*$.ajax({
                url: 'php/delete_file.php',
                data: {'file' :  'uploads/datosCuestionario.pdf'},
-               method: 'GET',
+               method: 'GET',/*
                /*success: function (response) {
                   alert('Deleted!');
      
                },
                error: function () {
                   alert('Not Deleted!');
-               }*/
-            });
+               }*//*
+            });*/
 
             $.ajax('php/upload.php',
             {
