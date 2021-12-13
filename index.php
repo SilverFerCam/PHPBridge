@@ -6,9 +6,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bridge Quick Scan</title>
+    <title>Digital Transformation Roadmap Quick Scan</title>
     <link rel="shortcut icon" href="img/favicon.png"/>
-    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css?v=<?php echo time(); ?>">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
@@ -18,7 +18,7 @@
 <body>
     <div class="barra">
         <a href="https://silver-storm.com/"><img src="img/SilverLogo5.png" class="logo"></a>
-        <a class="derecha">Digital Tranformation Roadmap Quick Scan</a>
+        <a class="derecha">Digital Transformation Roadmap Quick Scan</a>
     </div>
     <div id="graph" class="grafico">
         <canvas id="myChart" width="400" height="400" position="relative"></canvas>
@@ -351,12 +351,12 @@
             <input type="button" class="boton" id="update" value="Update">
             <input type="button" class="boton" id="siguiente" value="Next">
             <input type="button" class="boton" id="enviar" value="Next">
-            <input type="button" class="boton" id="pdf" value="Generate PDF">
+            <input type="button" class="boton" id="pdf" value="Generate My Results">
         </div>        
     </div>
 </body>
-<script src="js/graph.js"></script>
-<script src="js/form.js"></script>
-<script src="js/pdf.js"></script>
+<script src="js/graph.js?v=<?php echo time(); ?>"></script>
+<script src="js/form.js?v=<?php echo time(); ?>"></script>
+<script src="js/pdf.js?v=<?php echo time(); ?>"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </html>

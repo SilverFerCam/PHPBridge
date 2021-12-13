@@ -168,14 +168,32 @@ document.getElementById("pdf").addEventListener("click",function(){
             doc.setTextColor("#adacb2");
          }
 
-         //Primera Pagina
+         //Pagina 2
+         setCabecera();
+         doc.text(20,30,'About ITIL 4');
+         setTitulo();
+         doc.text(20,45,'IT services are now the first and often most important means of value \ncreation for organisations all over the world, and IT service management is \ngrowing and changing at an ever-increasing pace. ITIL® 4 has been \ncreated from the ground up for this dynamic environment, while still \nkeeping the core focus of facilitating value creation in the form of IT services.')
+         doc.text(20,75, 'The ITIL® guiding principles are a set of recommendations that can guide \nan organisation, regardless of background variables like its vision, goals, \nor hierarchy.')
+         doc.text(20,95,'ITIL® 4 takes governance to mean the system or systems by which an organi-\nsation is directed or managed. A governing body could be a board of directors, \na team of senior managers, or even just one chief executive.')
+         doc.text(20,115,'The ITIL ® 4 Service Value Chain is an operating model for IT services, \nfrom their creation to delivery and continual improvement. It has six constituent \nactivities that combine to create several value streams: Plan, Engage, \nObtain or Build, Improve, Design & Transition, Deliver & Support, \nImprove. These streams are flexible enough that they can adapt to different \nmethodologies (such as Agile) at once.');
+         doc.text(20,150,'The Plan activity is used to create an understanding of the overall vision \nfor products and services.')
+         doc.text(20,165,'The Engage activity facilitates a strong understanding of stakeholder needs \nand relationships.');
+         doc.text(20,180,'The Design and Transition activity is used to guarantee that all products and \nservices meet quality standards.');
+         doc.text(20,195,'The Obtain or Build activity is used to ensure that service components are \navailable where and when needed.');
+         doc.text(20,210,'The Deliver and Support activity ensures that products and service are \ncreated to match stakeholder specifications.');
+         doc.text(20,225,'The Improve activity is used to ensure continual improvement of all outputs \nthroughout the value chain.');
+         doc.text(20,240,'In ITIL ® 4 a management practice is a set of organisational resources \ndesigned for performing work or accomplishing an objective. The origins of the \npractices are as follows:')
+
+
+         //Pagina 3
+         doc.addPage();
          setCabecera();
          doc.text(20,30,'Graph Results:');
          doc.addImage(img, 30, 35);
 
-         //Segunda Pagina
+         //Pagina 4
          doc.addPage();         
-         doc.text(20,30,'Skills Results:');
+         doc.text(20,30,'My Results:');
          setTitulo();
          doc.text(20,50,'Guiding Principles:');
          setDato();
@@ -222,7 +240,7 @@ document.getElementById("pdf").addEventListener("click",function(){
          doc.text(20,265,resultados[10]);
          setTitulo();
 
-         //Tercera Pagina
+         //Pagina 5
          doc.addPage();
          doc.text(20,30,'Continual Improvement: ');
          setDato();
@@ -230,36 +248,20 @@ document.getElementById("pdf").addEventListener("click",function(){
 
          var blob = doc.output('blob');
 
-            var formData = new FormData();
-            formData.append('pdf', blob);
+         var formData = new FormData();
+         formData.append('pdf', blob);         
 
-            /*$.ajax({
-               url: 'php/delete_file.php',
-               data: {'file' :  'uploads/datosCuestionario.pdf'},
-               method: 'GET',/*
-               /*success: function (response) {
-                  alert('Deleted!');
-     
-               },
-               error: function () {
-                  alert('Not Deleted!');
-               }*//*
-            });*/
+         $.ajax('php/upload.php',
+         {
+            method: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(data){console.log(data)},
+            error: function(data){console.log(data)}
+         });
 
-            $.ajax('php/upload.php',
-            {
-                method: 'POST',
-                data: formData,
-                processData: false,
-                contentType: false,
-                success: function(data){console.log(data)},
-                error: function(data){console.log(data)}
-            });
-
-         doc.save('DatosCuestionario.pdf');
-
-         window.location = "php/mail.php";
-
+         doc.save('DigitalTransformationResults.pdf');
       }
    });
 });
