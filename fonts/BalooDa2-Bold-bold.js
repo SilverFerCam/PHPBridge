@@ -1,0 +1,2 @@
+﻿import { jsPDF } from "jspdf"
+
