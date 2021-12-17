@@ -15,6 +15,7 @@ function mostrarPregunta(indice){
 
 //Declaramos la funcion para mostrar la anterior pregunta
 function anteriorPregunta(indice){
+    //Si la pregunta es la primera ocultamos el boton back, de cualquier forma ocultamos la pregunta actual y mostramos la anterior
     if(indice==1){
         document.getElementById("back").style.display = "none";
     }else if(indice<20){
@@ -49,7 +50,8 @@ document.getElementById("enviar").addEventListener("click",function(){
         document.getElementById("pdf").style.display = "inline-block";
         document.getElementById("back").style.display = "inline-block";
         document.getElementById("update").style.display = "inline-block";
-    }else if(visible==1){     
+    }else if(visible==1){    
+        //Si hay una respuesta marcada mostramos la siguiente 
         respuestaActiva = document.getElementsByName("p"+visible);
         for(i=0;i<respuestaActiva.length;i++){
             if(respuestaActiva[i].checked){
@@ -60,6 +62,7 @@ document.getElementById("enviar").addEventListener("click",function(){
         
     }else if(visible>1){
         if(visible+1!=21){
+            //Si hay una respuesta marcada mostramos la siguiente 
             respuestaActiva = document.getElementsByName("p"+visible);
             for(i=0;i<respuestaActiva.length;i++){
                 if(respuestaActiva[i].checked==true){             
@@ -71,7 +74,7 @@ document.getElementById("enviar").addEventListener("click",function(){
     }
 });
 
-//Develop del boton back
+//Si la pregunta no es la primera hacemos una llamada a la funcion anteriorPregunta() para volver atrás entre preguntas
 document.getElementById("back").addEventListener("click",function(){
     if(visible!=1){
         visible--;

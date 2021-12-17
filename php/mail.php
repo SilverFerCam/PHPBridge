@@ -11,7 +11,9 @@
 
     try {
         session_start();
-        //Server settings        
+        //SMTP GMAIL 
+        //smtp.silver-storm.com
+        /*
         $mail->isSMTP();                                            //Send using SMTP
         $mail->Host       = 'smtp.gmail.com';                       //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -19,15 +21,27 @@
         $mail->Password   = '!tfq3+GtMq*.M6:T';                     //SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
         $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-    
-        //Recipients
-        $mail->setFrom('silverfercam.info@gmail.com', 'David Fernandez');
-        $mail->addAddress('davidfercam69@gmail.com');               //Add a recipient                               
-        //Mail del cliente pillado por SESSION
-        //$mail->addAddress($_SESSION['email']);
-        //$mail->addAddress('aheras@silver-storm.com'); <-- Correo de Alberto
 
-        //move_uploaded_file($_GET['pdf'],"../uploads/DigitalTransformationResults.pdf");
+        $mail->setFrom('silverfercam.info@gmail.com', 'David Fernandez');
+        $mail->addAddress('davidfercam69@gmail.com');*/
+        
+        //SMTP OUTLOOK
+        
+        $mail->isSMTP();                                            //Send using SMTP
+        $mail->Host       = 'smtp-mail.outlook.com';                //Set the SMTP server to send through
+        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+        $mail->Username   = 'dcambronel@silver-storm.com';          //SMTP username
+        $mail->Password   = 'Abduscan2018@';                        //SMTP password
+        $mail->SMTPSecure = 'tls';                                  //Enable implicit TLS encryption
+        $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+        //Recipients
+        $mail->setFrom('dcambronel@silver-storm.com', 'David Fernandez');
+        $mail->addAddress('dcambronel@silver-storm.com');               //Add a recipient    
+
+        //Mail del cliente pillado por SESSION
+        //$mail->addAddress($_SESSION['email']);        
+
         //echo($_SESSION['pdf']);
         $pdf = "../uploads/DigitalTransformationResults.pdf";
 

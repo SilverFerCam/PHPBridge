@@ -13,7 +13,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>    
+    <script src="jsPDF/src/libs/FileSaver.js" type="module"></script>
+    <script src="jsPDF/fontconverter/filereader.js"></script>
+    <script src="jsPDF/src/libs/png.js"></script>
+    <script src="jsPDF-CustomFonts/dist/jspdf.customfonts.min.js"></script>
+    <script src="jsPDF-CustomFonts/dist/default_vfs.js"></script>
 </head>
 <body>
     <div class="barra">
@@ -355,8 +360,10 @@
         </div>        
     </div>
 </body>
+
+<script src="js/portada.js"></script>
 <script src="js/graph.js?v=<?php echo time(); ?>"></script>
 <script src="js/form.js?v=<?php echo time(); ?>"></script>
-<script src="js/pdf.js?v=<?php echo time(); ?>"></script>
+<script src="js/pdf.js?v=<?php echo time(); ?>" type="module"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </html>

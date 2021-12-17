@@ -6,6 +6,8 @@ var guidingP = 0;
 var gover = 0;
 var general = 0;
 var service = 0;
+
+//Declaracion del objeto myChart de tipo Chart
 var myChart = new Chart(ctx,{
     //tipo de grafica
     type: "radar",
@@ -19,20 +21,21 @@ var myChart = new Chart(ctx,{
             //atributo para rellenar el contenido de los datos 
             fill:true,
             //estilos del trazado
-            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-            borderColor: 'rgb(255, 99, 132)',
+            backgroundColor: 'rgba(255, 99, 132, 0.2)', //color de fondo
+            borderColor: 'rgb(255, 99, 132)', //color de la linea
             borderWidth: 2
         }]
     },
     options: {
         resposive: 'true',
+        //Posicion de la leyenda en la grafica
         legend:{
             position: 'bottom'
         },
         //escalado de la grafica
         scale: {
             ticks: {
-                //valor minimo del escalado
+                //valor minimo = 0
                 beginAtZero: true,
                 //valor maximo del escalado
                 max: 5
@@ -40,25 +43,30 @@ var myChart = new Chart(ctx,{
         }
     }   
 });
-
+//Indice de la pregunta que irá incrementando conforme se pulse el boton next
 numPregunta = 1;
 categoria = 0;
 cont = 2;
 var salida = 0;
 var suma = 0;
 var valores = [];
+//Las categorias con mas de una pregunta almacenaran datos en un array
 var Cat1 = [];
 var Cat2 = [];
 var Cat8 = [];
 var Cat9 = [];
 
-//Develop del boton Next hasta la pregunta 20
+//Insercion de datos en la grafica hasta la pregunta 20 con el boton Next
 document.getElementById("enviar").addEventListener("click",function(){
+
+    //Declaramos un array arrayRadios que almacena los elementos radio button de la pregunta actual para recorrerlos y ver si estan checkeados
     var arrayRadios = document.getElementsByName("p"+numPregunta);
     for(i=0;i<arrayRadios.length;i++){
 
+        //Comprobamos que haya una respuesta marcada
         if(arrayRadios[i].checked){
-
+            //Comprobamos que pregunta es la actual, dependiendo de que pregunta sea se hará la media de datos (si la categoria tiene mas de una pregunta) 
+            //o se insertará directamente el valor en la grafica
             if(numPregunta==1){
                 guidingP = parseInt(arrayRadios[i].value);
                 Cat1.push(parseInt(arrayRadios[i].value));

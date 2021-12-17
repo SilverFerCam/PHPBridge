@@ -1,0 +1,47 @@
+{
+  "name": "jspdf-customfonts",
+  "version": "0.0.4-rc.4",
+  "homepage": "https://github.com/sphilee/jsPDF-CustomFonts-support",
+  "description": "Add Custom fonts support to jsPDF",
+  "main": "dist/jspdf.customfonts.min.js",
+  "files": [
+    "dist/jspdf.customfonts.debug.js",
+    "dist/jspdf.customfonts.min.js",
+    "makeFonts.js",
+    "README.md"
+  ],
+  "bin": {
+    "jsPDF-makeFonts": "makeFonts.js"
+  },
+  "keywords": [
+    "pdf",
+    "font",
+    "custom"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sphilee/jsPDF-CustomFonts-support.git"
+  },
+  "author": "sphilee",
+  "peerDependencies": {
+    "jspdf": "^1.4.0"
+  },
+  "devDependencies": {
+    "jspdf": "^1.4.0",
+    "@babel/core": "^7.0.0-beta.49",
+    "@babel/preset-env": "^7.0.0-beta.49",
+    "babel-loader": "^8.0.0-beta.3",
+    "clean-webpack-plugin": "^0.1.19",
+    "minimist": "^1.2.0",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "webpack": "^4.9.1",
+    "webpack-cli": "^2.1.4"
+  },
+  "bugs": {
+    "url": "https://github.com/sphilee/jsPDF-CustomFonts-support/issues"
+  },
+  "scripts": {
+    "build": "webpack && node makeFonts.js"
+  }
+}

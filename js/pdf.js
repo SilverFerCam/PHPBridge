@@ -1,5 +1,4 @@
 /*Creacion del PDF al pulsar el boton Generate PDF*/
-
 //Evento de boton
 document.getElementById("pdf").addEventListener("click",function(){
    var datos = myChart.data.datasets[0].data;   
@@ -145,30 +144,31 @@ document.getElementById("pdf").addEventListener("click",function(){
 
    //Parte visible del PDF
    html2canvas(document.getElementById("graph"), {
-      onrendered: function(canvas) {
-         var img = canvas.toDataURL();
-         var doc = new jsPDF();
-
+      onrendered: function(canvas) {         
+         var doc = new jsPDF();         
          //Estilos de las fuentes
          function setCabecera(){
-            doc.setFont("helvetica","bold");
+            doc.setFont("BalooDa2-Bold","bold");
             doc.setFontSize(20);
             doc.setTextColor("#91004b");
          }
 
          function setTitulo(){
-            doc.setFont("helvetica","bold");
+            doc.setFont("BalooDa2-Bold","bold");
             doc.setFontSize(13);
             doc.setTextColor("#1a6779");
          }
 
          function setDato(){
-            doc.setFont("helvetica","normal");
+            doc.setFont("BalooDa2-Bold");
             doc.setFontSize(10);
             doc.setTextColor("#adacb2");
          }
-
-         //Pagina 2
+         
+         doc.addImage(portada,'png',20,30,170,65);
+         
+         //Pagina 2         
+         doc.addPage();
          setCabecera();
          doc.text(20,30,'About ITIL 4');
          setTitulo();
@@ -182,16 +182,25 @@ document.getElementById("pdf").addEventListener("click",function(){
          doc.text(20,195,'The Obtain or Build activity is used to ensure that service components are \navailable where and when needed.');
          doc.text(20,210,'The Deliver and Support activity ensures that products and service are \ncreated to match stakeholder specifications.');
          doc.text(20,225,'The Improve activity is used to ensure continual improvement of all outputs \nthroughout the value chain.');
-         doc.text(20,240,'In ITIL ® 4 a management practice is a set of organisational resources \ndesigned for performing work or accomplishing an objective. The origins of the \npractices are as follows:')
-
+         doc.text(20,240,'In ITIL ® 4 a management practice is a set of organisational resources \ndesigned for performing work or accomplishing an objective. The origins \nof the practices are as follows:')
 
          //Pagina 3
          doc.addPage();
-         setCabecera();
-         doc.text(20,30,'Graph Results:');
-         doc.addImage(img, 30, 35);
+         doc.text(20,30,'In ITIL ® 4 a management practice is a set of organisational resources \ndesigned for performing work or accomplishing an objective. The origins of the \npractices are as follows:');
+         doc.text(20,30,'In ITIL ® 4 a management practice is a set of organisational resources \ndesigned for performing work or accomplishing an objective. The origins of the \npractices are as follows:');
+         doc.text(20,50,'- General management practices have been adopted and adapted for service \n management from general business management domains');
+         doc.text(20,60,'- Service management practices have been developed in service management \n and ITSM industries');
+         doc.text(20,70,'- Technical management practices have been adapted from technology \n management domains for service management purposes.');
+         doc.text(20,85,'ITIL® 4 includes a continual improvement model, which should be used \nalongside the Improve value chain activity to aid organisations’ improvement \ninitiatives. The model supports a structured, iterative approach to continual \nimprovement, with the awareness that its implementation will vary \nconsiderably based on the specific organisations or areas to which it applies.')
 
          //Pagina 4
+         doc.addPage();
+         setCabecera();
+         doc.text(20,30,'Graph Results:');
+         var img = canvas.toDataURL();
+         doc.addImage(img, 30, 35);
+
+         //Pagina 5
          doc.addPage();         
          doc.text(20,30,'My Results:');
          setTitulo();
@@ -240,12 +249,13 @@ document.getElementById("pdf").addEventListener("click",function(){
          doc.text(20,265,resultados[10]);
          setTitulo();
 
-         //Pagina 5
+         //Pagina 6
          doc.addPage();
          doc.text(20,30,'Continual Improvement: ');
          setDato();
          doc.text(20,35,resultados[11]);
 
+         //Envio del PDF al servidor
          var blob = doc.output('blob');
 
          var formData = new FormData();
@@ -261,6 +271,7 @@ document.getElementById("pdf").addEventListener("click",function(){
             error: function(data){console.log(data)}
          });
 
+         //Guardado del PDF en local
          doc.save('DigitalTransformationResults.pdf');
       }
    });
