@@ -1,5 +1,38 @@
+@font-face {
+    font-family: 'BalooDa2';
+    src: url('../fonts/BalooDa2-Regular.ttf') format('truetype');
+    font-style: normal; 
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url('../fonts/Raleway-VariableFont_wght.ttf');
+    font-style: bold;
+    font-weight: normal;
+}
+
+#myProgress {
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background-color: #ddd;
+}
+  
+ #myBar {
+    border-radius: 5px;
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background-color: #4CAF50;
+    transition: width 1s;
+}
+
 body{
-    margin: 0;    
+    margin: 0;        
 }
 
 .barra{
@@ -10,12 +43,33 @@ body{
     overflow: hidden;
 }
 
+.barra a{
+    font-family: BalooDa2 !important;
+    font-size: 20px;
+    vertical-align: middle !important;
+    padding: 19px;
+}
+
+h3{
+    font-family: BalooDa2 !important;
+    font-size: 24px;
+}
+
+.respuestas label{
+    font-family: Raleway !important;
+}
+
+input[type='button']{
+    font-family: BalooDa2 !important;
+    font-size: 19px;
+}
+
 .boton{
     background-color: rgb(129,0,71);
     border: none;
     border-radius: 3px;
     color: white;
-    padding: 10px;
+    padding: 5px;
     box-shadow: rgb(129,0,71);
     margin-top: 15px;
     font-size: 15px;
@@ -26,9 +80,10 @@ body{
     background-color: rgb(173, 172, 178);
 }
 
-.logo{
+.logo{    
     padding: 10px;
-    width: 7%;
+    width: 110px;
+    margin-top: 5px;
     margin-left: 10px;
     min-width: 100px;
 }
@@ -66,7 +121,7 @@ body{
 }
 
 #pdf{    
-    width: 170px;    
+    width: 180px;    
 }
 
 #pdf:hover{
@@ -119,8 +174,7 @@ body{
 
 .derecha{
     float: right;   
-    margin-top: 25px;
-    margin-right: 50px; 
+    vertical-align: middle;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -154,8 +208,14 @@ input[type="radio"]{
     }
 }
 
-@media (max-width: 578px){
+@media (max-width: 600px){
     .derecha{
         display: none;
+    }
+}
+
+@media (max-width: 1025px){
+    .cuestionario{
+        margin-left: 10px;        
     }
 }

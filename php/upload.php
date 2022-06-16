@@ -1,8 +1,9 @@
 <?php    
-    $pdf = $_FILES['pdf']['tmp_name'];
-    session_start();
-    $_SESSION['pdf'] = $pdf;
-    unlink("../uploads/DigitalTransformationResults.pdf");
-    move_uploaded_file($_FILES['pdf']['tmp_name'],"../uploads/DigitalTransformationResults.pdf");
-    header("Location: mail.php");
+    if(!empty($_POST['data'])){        
+        $data = base64_decode($_POST['data']);        
+        file_put_contents( "../uploads/DigitalTransformationResults.pdf", $data );        
+    } else {
+        echo "No Data Sent";
+    }
+    exit();     
 ?>

@@ -13,7 +13,7 @@ var myChart = new Chart(ctx,{
     type: "radar",
     data:{
         //valores de la grafica
-        labels:['Guiding Principles','Governance','Plan','Engage','Design & Transition','Obtain or Build','Deliver and support','Improve','General Mgmt Practices','Service Management Practices','Technical Mgmt Practices','Continual Improvement'],
+        labels:['Guiding Principles','Governance','Plan','Engage','Design & Transition','Obtain or Build','Deliver and support','Improve','General Mgmt Practices','Service Mgmt Practices','Technical Mgmt Practices','Continual Improvement'],
         datasets:[{            
             label:'Skill Areas',
             //datos de la grafica

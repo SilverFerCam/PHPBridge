@@ -1,0 +1,192 @@
+@font-face {
+    font-family: 'BalooDa2';
+    src: url('../fonts/BalooDa2-Regular.ttf') format('truetype');
+    font-style: normal; 
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url('../fonts/Raleway-VariableFont_wght.ttf');
+    font-style: bold;
+    font-weight: normal;
+}
+
+body{
+    background-image: linear-gradient(to bottom, rgba(150, 0, 72, 1), rgba(24, 108, 128, 1)) !important;
+}
+
+body{
+    margin: 0;    
+}
+
+.privacy{
+    color: #fff;
+    font-family: BalooDa2;
+    margin-left: 10px;
+    font-size: 12px;
+    width: 98%;
+}
+
+.privacy p a{
+    color: #fff;
+}
+
+form{
+    width: 60%;
+    margin: 0 auto;
+}
+
+.cuestionario{
+    margin: 0 auto;
+}
+
+.header>h1,.header>h4,.header>h5,.header>img{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.nav img{
+    padding: 20px;
+}
+
+h1.baloo{
+    max-width: 1000px;
+    font-family: BalooDa2;
+    font-size: 47px;
+    color: #fff;
+}
+
+h4.baloo{
+    font-family: BalooDa2;
+    font-size: 30px;
+    color: #fff;
+}
+
+h5.baloo{
+    font-family: BalooDa2;
+    font-size: 20px;
+    color: #fff;
+}
+
+.inputcountry{
+    height: 43px;
+}
+
+.header{
+    display: block;
+    align-items: center;
+    width: 100%;
+}
+
+.formulario{
+    width: 100%;
+    margin: 0 auto;    
+}
+
+select,input[type=text],input[type=number]{
+    font-family: 'Raleway';
+    border: 1px solid rgb(255, 255, 255);
+    padding: 10px;
+    width: 400px;
+    font-size: .9rem;
+    background-color: #fff;
+    -webkit-appearance: none;
+    border-radius: 4px;
+}
+
+input:focus{
+    outline:none;
+}
+
+.other{
+    display: none;
+}
+
+select{
+    width: 104%;
+}
+
+option{
+    margin-top: 15px;
+}
+
+.duo{
+    width: 100%;
+    height: 100px;
+}
+
+.data{
+    width: 47%;
+    height: 80px;
+    margin: 10px;
+} 
+
+.data label{
+    font-family: 'BalooDa2';
+    float: left;
+    width: 100%;
+    font-size: 20px;
+    color: #fff;
+} 
+
+.data input{
+    float: left;
+    height: 20px;
+    width: 100%;
+}
+
+.izq{
+    float: left;
+}
+
+.der{
+    float: right;
+}
+
+.enviar{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.enviar input{
+    font-family: 'BalooDa2';
+}
+
+.submit{
+    margin-left: 10px;
+    background-color: #5CB2B1;
+    font-size: 25px;
+    padding: 10px;
+    width: 200px;
+    border-radius: 30px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media (max-width: 1400px) {
+    .der{
+        float: left;
+    }
+
+    .duo{
+        width: 100%;
+        height: 200px;        
+    }
+
+    .country{
+        height: 100px;
+    }
+
+    .data{
+        width: 90%;
+    }    
+}
+@media (max-width: 430px) {
+    .logo{
+        width: 200px;
+    }
+}
